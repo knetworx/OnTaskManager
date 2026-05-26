@@ -1,6 +1,6 @@
 # OnTaskManager
 
-Activity/productivity-tracking app for Windows. This is a testbed for using Claude Code (specifically when I'm not at my computer.) Initial scaffolding set up purely through Claude in the browser. Will eventually get this up and running in VSCode.
+Activity/productivity-tracking app for Windows. This is a testbed for using Claude Code (specifically when I'm not at my computer.) Initial scaffolding set up purely through Claude in the browser. Will eventually get this up and running in VSCode for manual/proper dev and fine-tuning.
 
 ## Layout
 
