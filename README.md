@@ -6,16 +6,24 @@ Activity/productivity-tracking app for Windows. This is a testbed for using Clau
 
 ```
 src/
-  tracker/   foreground window + idle detection (Win32)
-  storage/   SQLite persistence
-  ui/        tray icon + main window
-  app/       Application wiring + entry point
-tests/       GoogleTest suite
+  tracker/   foreground window + idle detection (Win32),
+             pluggable ActivityProviders (Generic / Chrome / Visual Studio)
+  storage/   SQLite persistence — activity tree, category tree,
+             activity→category mapping, samples
+  ui/        Qt 6 main window with the combined category/activity timeline,
+             system tray icon
+  app/       QApplication wiring + entry point
+tests/       GoogleTest suite (storage, providers, tracker)
 ```
+
+See `CLAUDE.md` for the design intent (two-tree model, providers, tray-first
+lifecycle, what's still open).
 
 ## Build
 
 Requires Windows, MSVC (Visual Studio 2022), CMake 3.25+, Ninja, and vcpkg.
+Qt 6 (qtbase) is pulled in via vcpkg manifest mode; the first configure
+builds Qt from source and may take 30–60 minutes.
 Set `VCPKG_ROOT` to your vcpkg checkout, then:
 
 ```pwsh

@@ -5,6 +5,11 @@
   "builtin-baseline": "9b965a116838c6cdcd36bca60d1b81b030c8ab8d",
   "dependencies": [
     "sqlite3",
-    "gtest"
+    "gtest",
+    {
+      "name": "qtbase",
+      "default-features": false,
+      "features": ["widgets", "png", "jpeg", "freetype", "harfbuzz"]
+    }
   ]
 }

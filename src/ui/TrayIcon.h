@@ -1,18 +1,26 @@
 #pragma once
 
-#include <string>
+#include <QObject>
+#include <QSystemTrayIcon>
+
+class QMenu;
 
 namespace ontask::ui {
 
-class TrayIcon {
+class TrayIcon : public QObject {
+    Q_OBJECT
 public:
-    TrayIcon();
-    ~TrayIcon();
+    explicit TrayIcon(QObject* parent = nullptr);
 
-    TrayIcon(const TrayIcon&) = delete;
-    TrayIcon& operator=(const TrayIcon&) = delete;
+    bool install(const QString& tooltip);
 
-    void setTooltip(const std::wstring& text);
+signals:
+    void openRequested();
+    void quitRequested();
+
+private:
+    QSystemTrayIcon* icon_ = nullptr;
+    QMenu* menu_ = nullptr;
 };
 
 } // namespace ontask::ui
